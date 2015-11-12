@@ -5,8 +5,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>uk.org.lidalia</groupId>
-  <artifactId>lidalia-http-2</artifactId>
-  <version>1.0.0-SNAPSHOT</version>
+  <artifactId>lidalia-http-client</artifactId>
+  <version>0.1.0-SNAPSHOT</version>
 
   <properties>
     <httpcore.version>4.3.3</httpcore.version>
@@ -21,6 +21,16 @@
       <groupId>uk.org.lidalia</groupId>
       <artifactId>lidalia-lang</artifactId>
       <version>1.0.0</version>
+    </dependency>
+    <dependency>
+      <groupId>uk.org.lidalia</groupId>
+      <artifactId>lidalia-scala-lang</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+    </dependency>
+    <dependency>
+      <groupId>uk.org.lidalia</groupId>
+      <artifactId>lidalia-http-core</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>joda-time</groupId>
@@ -85,6 +95,26 @@
       <version>1.0.4</version>
       <scope>test</scope>
     </dependency>
+    <dependency>
+      <groupId>uk.org.lidalia</groupId>
+      <artifactId>lidalia-scala-lang</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>uk.org.lidalia</groupId>
+      <artifactId>lidalia-stubhttp</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>uk.org.lidalia</groupId>
+      <artifactId>lidalia-http-core</artifactId>
+      <version>0.1.0-SNAPSHOT</version>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <build>
@@ -95,6 +125,10 @@
         <groupId>net.alchim31.maven</groupId>
         <artifactId>scala-maven-plugin</artifactId>
         <version>3.2.2</version>
+        <configuration>
+          <checkMultipleScalaVersions>false</checkMultipleScalaVersions>
+          <args><arg>-feature</arg></args>
+        </configuration>
         <executions>
           <execution>
             <goals>

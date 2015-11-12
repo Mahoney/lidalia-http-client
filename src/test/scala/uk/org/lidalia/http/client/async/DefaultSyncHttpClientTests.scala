@@ -10,7 +10,7 @@ import uk.org.lidalia.net2.Url
 import uk.org.lidalia.slf4jext.Level
 import uk.org.lidalia.slf4jtest.TestLoggerFactory
 import uk.org.lidalia.stubhttp.{DSL, StubHttpServerFactory}
-import uk.org.lidalia.support.WithResourceTests
+import uk.org.lidalia.scalalang.WithResourceTests
 
 class DefaultSyncHttpClientTests extends FunSuite with WithResourceTests {
 

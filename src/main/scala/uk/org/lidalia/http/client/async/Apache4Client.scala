@@ -7,7 +7,7 @@ import com.google.common.base.Charsets
 import org.apache.commons.io.IOUtils
 import uk.org.lidalia
 import lidalia.http
-import http.core.{AnyEntity, Code, EitherEntity, Entity, HeaderField, Reason, Request, Response, ResponseHeader}
+import lidalia.http.core.{EntityUnmarshaller, AnyEntity, Code, EitherEntity, Entity, HeaderField, Reason, Request, Response, ResponseHeader}
 import lidalia.net2.{IpAddress, Url}
 import org.apache
 import apache.http.client.{ResponseHandler => ApacheResponseHandler}

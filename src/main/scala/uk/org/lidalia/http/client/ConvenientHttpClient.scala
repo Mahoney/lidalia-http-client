@@ -3,11 +3,12 @@ package uk.org.lidalia.http.client
 import uk.org.lidalia.http
 import http.core.Method.{DELETE, GET, HEAD, TRACE}
 import http.core.headerfields.Host
-import http.core.{HeaderField, Method, Request, RequestUri}
-import uk.org.lidalia.lang.ByteSeq
+import uk.org.lidalia.http.core.{Accept, HeaderField, Method, Request, RequestUri}
+import uk.org.lidalia.scalalang.ByteSeq
 import uk.org.lidalia.net2.Url
 
 import scala.collection.immutable
+import scala.language.higherKinds
 
 object ConvenientHttpClient {
   def apply[Result[_]](

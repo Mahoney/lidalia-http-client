@@ -2,7 +2,7 @@ package uk.org.lidalia.http.client
 
 import org.scalatest
 import scalatest.prop.TableDrivenPropertyChecks
-import uk.org.lidalia.support.WithResourceTests
+import uk.org.lidalia.scalalang.WithResourceTests
 
 class TargetedHttpClientTests extends TableDrivenPropertyChecks with WithResourceTests {
 

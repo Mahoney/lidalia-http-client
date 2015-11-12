@@ -4,6 +4,8 @@ import java.lang.System.lineSeparator
 
 import uk.org.lidalia.http.core.{Request, Response}
 
+import scala.language.higherKinds
+
 object ServerError {
   def apply(response: Response[_], request: Request[_, _]) = new ServerError(response, request)
 }

@@ -7,7 +7,9 @@ import uk.org.lidalia.http
 import http.core.{Request, Response}
 import uk.org.lidalia.net2.Url
 
-import scala.concurrent.{Await, duration => scala}
+import scala.language.higherKinds
+import scala.concurrent.Await
+import scala.concurrent.{ duration => conc }
 
 object SyncHttpClient {
 
@@ -46,7 +48,7 @@ class SyncHttpClient[Result[_]] private (
   timeout: Duration
 ) extends HttpClient[Result] {
 
-  private val scalaTimeout = scala.Duration(timeout.getMillis, MILLISECONDS)
+  private val scalaTimeout = conc.Duration(timeout.getMillis, MILLISECONDS)
 
   def execute[T](
     request: Request[T, _]
