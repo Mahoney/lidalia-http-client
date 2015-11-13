@@ -67,7 +67,7 @@
     <dependency>
       <groupId>com.github.tomakehurst</groupId>
       <artifactId>wiremock</artifactId>
-      <version>1.54</version>
+      <version>1.58</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -127,7 +127,7 @@
         <version>3.2.2</version>
         <configuration>
           <checkMultipleScalaVersions>false</checkMultipleScalaVersions>
-          <args><arg>-feature</arg></args>
+          <args><arg>-feature</arg><arg>-deprecation</arg></args>
         </configuration>
         <executions>
           <execution>
