@@ -14,7 +14,7 @@ import http.core.RequestBuilder.get
 import http.core.Response
 import http.core.ResponseBuilder.response
 import http.core.headerfields.Location
-import lidalia.net2.Url
+import lidalia.net.Url
 
 import scala.concurrent.Future.successful
 import scala.concurrent.duration.Duration

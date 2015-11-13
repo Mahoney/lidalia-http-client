@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit.MILLISECONDS
 import org.joda.time.Duration
 import uk.org.lidalia.http
 import http.core.{Request, Response}
-import uk.org.lidalia.net2.Url
+import uk.org.lidalia.net.Url
 
 import scala.language.higherKinds
 import scala.concurrent.Await

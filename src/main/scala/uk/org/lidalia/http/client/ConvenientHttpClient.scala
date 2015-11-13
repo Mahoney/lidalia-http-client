@@ -5,7 +5,7 @@ import http.core.Method.{DELETE, GET, HEAD, TRACE}
 import http.core.headerfields.Host
 import uk.org.lidalia.http.core.{Accept, HeaderField, Method, Request, RequestUri}
 import uk.org.lidalia.scalalang.ByteSeq
-import uk.org.lidalia.net2.Url
+import uk.org.lidalia.net.Url
 
 import scala.collection.immutable
 import scala.language.higherKinds

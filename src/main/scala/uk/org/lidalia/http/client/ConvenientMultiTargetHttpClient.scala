@@ -3,7 +3,7 @@ package uk.org.lidalia.http.client
 import uk.org.lidalia.http.core.Method.GET
 import uk.org.lidalia.http.core.{Method, Request, RequestUri}
 import uk.org.lidalia.scalalang.ByteSeq
-import uk.org.lidalia.net2.Url
+import uk.org.lidalia.net.Url
 
 import scala.language.higherKinds
 

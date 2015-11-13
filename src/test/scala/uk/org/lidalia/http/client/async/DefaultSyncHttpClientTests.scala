@@ -6,7 +6,7 @@ import uk.org.lidalia.http.client.DefaultSyncHttpClient.get
 import uk.org.lidalia.http.core.MediaType.`text/plain`
 import uk.org.lidalia.http.core.headerfields.{ContentType, Date}
 import uk.org.lidalia.http.core.{Code, Response}
-import uk.org.lidalia.net2.Url
+import uk.org.lidalia.net.Url
 import uk.org.lidalia.slf4jext.Level
 import uk.org.lidalia.slf4jtest.TestLoggerFactory
 import uk.org.lidalia.stubhttp.{DSL, StubHttpServerFactory}

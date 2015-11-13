@@ -2,7 +2,7 @@ package uk.org.lidalia.http.client
 
 import uk.org.lidalia.http.core.{EntityUnmarshaller, Method, Request, RequestUri}
 import uk.org.lidalia.lang.RichObject
-import uk.org.lidalia.net2.{HostAndPort, Scheme, Url}
+import uk.org.lidalia.net.{HostAndPort, Scheme, Url}
 
 object DirectedRequest {
 

@@ -2,7 +2,7 @@ package uk.org.lidalia.http.client
 
 import uk.org.lidalia.http.client.RawHttpClient.{FutureResponseStringOr, ResponseStringOr}
 import uk.org.lidalia.http.core.{Request, Response}
-import uk.org.lidalia.net2.Url
+import uk.org.lidalia.net.Url
 
 import scala.concurrent.Future
 
