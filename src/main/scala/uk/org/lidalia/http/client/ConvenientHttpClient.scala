@@ -22,7 +22,7 @@ object ConvenientHttpClient {
   }
 }
 
-class ConvenientHttpClient[Result[_]](decorated: HttpClient[Result]) extends HttpClient[Result] {
+class ConvenientHttpClient[+Result[_]](decorated: HttpClient[Result]) extends HttpClient[Result] {
 
   def get[T](
     url: Url,

@@ -14,7 +14,7 @@ object MultiTargetHttpClient {
   }
 }
 
-class MultiTargetHttpClient[Result[_]] private (
+class MultiTargetHttpClient[+Result[_]] private (
   clientBuilder: (Url) => HttpClient[Result]
 ) {
 

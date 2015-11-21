@@ -16,7 +16,7 @@ object ConvenientMultiTargetHttpClient {
   }
 }
 
-class ConvenientMultiTargetHttpClient[Result[_]] private (
+class ConvenientMultiTargetHttpClient[+Result[_]] private (
   delegate: MultiTargetHttpClient[Result]
 ) {
 

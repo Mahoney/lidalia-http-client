@@ -43,7 +43,7 @@ object SyncHttpClient {
   }
 }
 
-class SyncHttpClient[Result[_]] private (
+class SyncHttpClient[+Result[_]] private (
   asyncHttpClient: FutureHttpClient[Result],
   timeout: Duration
 ) extends HttpClient[Result] {

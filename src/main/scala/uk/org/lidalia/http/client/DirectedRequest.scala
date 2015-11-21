@@ -23,7 +23,7 @@ object DirectedRequest {
   }
 }
 
-class DirectedRequest[T] private (
+class DirectedRequest[+T] private (
   @Identity val scheme: Scheme,
   @Identity val hostAndPort: HostAndPort,
   @Identity val request: Request[T, _],

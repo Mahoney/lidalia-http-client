@@ -13,7 +13,7 @@ package object client {
   implicit def typeToLeft[A,B](instance: A): Either[A,B] = Left(instance)
   implicit def typeToRight[A,B](instance: B): Either[A,B] = Right(instance)
 
-  class ToRichOption[A](val option: Option[A]) {
+  class ToRichOption[+A](val option: Option[A]) {
     def or[B >: A](default: => B): B = option.getOrElse(default)
     def ?[B](f: A => ?[B]): ?[B] = option.flatMap(f)
   }
