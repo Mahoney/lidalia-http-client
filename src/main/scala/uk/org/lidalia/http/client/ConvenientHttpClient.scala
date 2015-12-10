@@ -108,5 +108,5 @@ class ConvenientHttpClient[+Result[_]](decorated: HttpClient[Result]) extends Ht
     )
   }
 
-  override def execute[T](request: Request[T, _]) = decorated.execute(request)
+  override def executeClient[T](request: Request[T, _]) = decorated.execute(request)
 }

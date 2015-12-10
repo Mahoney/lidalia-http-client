@@ -50,7 +50,7 @@ class SyncHttpClient[+Result[_]] private (
 
   private val scalaTimeout = conc.Duration(timeout.getMillis, MILLISECONDS)
 
-  def execute[T](
+  def executeClient[T](
     request: Request[T, _]
   ): Result[T] = {
 

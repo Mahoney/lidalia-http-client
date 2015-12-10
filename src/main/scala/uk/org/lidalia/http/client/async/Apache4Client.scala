@@ -40,7 +40,7 @@ class Apache4Client private (
    apacheClient: CloseableHttpClient
 ) extends RawHttpClient {
 
-  override def execute[T](request: Request[T, _]): Future[Response[Either[String, T]]] = {
+  override def executeClient[T](request: Request[T, _]): Future[Response[Either[String, T]]] = {
     Future {
 
       val apacheHost = new HttpHost(
@@ -53,7 +53,7 @@ class Apache4Client private (
         request.method.toString,
         request.requestUri.toString
       )
-      
+
       val apacheResponseHandler = new ApacheResponseHandler[Response[Either[String, T]]] {
 
 

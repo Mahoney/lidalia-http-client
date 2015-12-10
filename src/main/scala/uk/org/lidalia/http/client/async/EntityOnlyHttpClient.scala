@@ -23,7 +23,7 @@ class EntityOnlyHttpClient private (
   decorated: HttpClient[FutureResponse]
 ) extends HttpClient[Future] {
 
-  override def execute[T](request: Request[T, _]): Future[T] = {
+  override def executeClient[T](request: Request[T, _]): Future[T] = {
     decorated.execute(request).map(_.entity)
   }
 }

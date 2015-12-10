@@ -34,7 +34,7 @@ class ExpectedEntityHttpClient private (
   decorated: RawHttpClient
 ) extends HttpClient[FutureResponse] with FutureHttpClient[Response] {
 
-  def execute[A](request: Request[A, _]): Future[Response[A]] = {
+  def executeClient[A](request: Request[A, _]): Future[Response[A]] = {
     val futureResponse = decorated.execute(request)
     futureResponse.map(response => {
       val eitherEntity = response.marshallableEntity.asInstanceOf[EitherEntity[String, A]]

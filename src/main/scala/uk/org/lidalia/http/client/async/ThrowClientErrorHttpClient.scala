@@ -15,7 +15,7 @@ class ThrowClientErrorHttpClient private (
   decorated: RawHttpClient
 ) extends RawHttpClient {
 
-   def execute[A](request: Request[A, _]): Future[Response[Either[String, A]]] = {
+   def executeClient[A](request: Request[A, _]): Future[Response[Either[String, A]]] = {
      val futureResponse = decorated.execute(request)
      futureResponse.map(response => {
        if (response.isClientError) throw ClientError(response, request)

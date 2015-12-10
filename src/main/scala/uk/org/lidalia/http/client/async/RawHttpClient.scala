@@ -16,5 +16,5 @@ object RawHttpClient {
 }
 
 trait RawHttpClient extends HttpClient[FutureResponseStringOr] with FutureHttpClient[ResponseStringOr] {
-  def execute[T](request: Request[T, _]): Future[Response[Either[String, T]]]
+  def executeClient[T](request: Request[T, _]): Future[Response[Either[String, T]]]
 }

@@ -7,6 +7,6 @@ import scala.language.higherKinds
 
 trait FutureHttpClient[+Result[_]] extends HttpClient[({type FutureResult[T]=Future[Result[T]]})#FutureResult] {
 
-  def execute[T](request: Request[T, _]): Future[Result[T]]
+  def executeClient[T](request: Request[T, _]): Future[Result[T]]
 
 }

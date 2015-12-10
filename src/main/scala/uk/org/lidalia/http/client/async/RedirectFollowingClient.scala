@@ -7,7 +7,7 @@ import scala.concurrent.Future
 
 class RedirectFollowingClient(decorated: RawHttpClient) extends RawHttpClient {
 
-  override def execute[T](request: Request[T, _]): Future[Response[Either[String, T]]] = execute(request, List())
+  override def executeClient[T](request: Request[T, _]): Future[Response[Either[String, T]]] = execute(request, List())
 
   private def execute[T](request: Request[T, _], history: List[Request[T, _]]): Future[Response[Either[String, T]]] = {
 
