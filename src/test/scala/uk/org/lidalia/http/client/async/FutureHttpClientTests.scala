@@ -21,22 +21,21 @@ class FutureHttpClientTests extends FunSuite {
 
     implicitly[FutureResponse[String] =:= Future[Response[String]]]
     implicitly[Future[Response[String]] =:= FutureResponse[String]]
-//    implicitly[result1.type =:= FutureResponse[String]]
-//    implicitly[FutureResponse[String] =:= result1.type]
-//    implicitly[result1.type =:= result2.type]
+    implicitly[result1.type <:< FutureResponse[String]]
+    implicitly[result2.type <:< FutureResponse[String]]
   }
 
   test("higher kinded type algebra") {
 
-//    trait Future[+T1]
-//    trait Response[+T2]
-//    type FutureResponse[+T3] = Future[Response[T3]]
-//
-//    trait HttpClient[+HK1[_]]
-//
-//    trait FutureHttpClient[+HK3[_]] extends HttpClient[({type FutureHK[T]=Future[HK3[T]]})#FutureHK]
-//
-//    implicitly[FutureHttpClient[Response] =:= HttpClient[FutureResponse]]
+    trait Future[+T1]
+    trait Response[+T2]
+    type FutureResponse[+T3] = Future[Response[T3]]
+
+    trait HttpClient[+HK1[_]]
+
+    trait FutureHttpClient[+HK3[_]] extends HttpClient[({type FutureHK[T]=Future[HK3[T]]})#FutureHK]
+
+    implicitly[FutureHttpClient[Response] <:< HttpClient[FutureResponse]]
 
   }
 

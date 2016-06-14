@@ -54,6 +54,9 @@ class Apache4Client private (
         request.method.toString,
         request.requestUri.toString
       )
+      request.headerFields.foreach { headerField =>
+        apacheRequest.addHeader(headerField.name, headerField.valueString)
+      }
 
       val apacheResponseHandler = new ApacheResponseHandler[Response[Either[String, T]]] {
 

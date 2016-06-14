@@ -1,6 +1,7 @@
 package uk.org.lidalia.http.client
 
 import uk.org.lidalia.http.client.ExpectedEntityHttpClient.FutureResponse
+import uk.org.lidalia.http.core.headerfields.{Host, UserAgent}
 import uk.org.lidalia.http.core.{EitherEntity, Request, Response}
 import uk.org.lidalia.net.Url
 
@@ -17,7 +18,13 @@ object ExpectedEntityHttpClient {
     ExpectedEntityHttpClient(
       ThrowClientErrorHttpClient(
         ThrowServerErrorHttpClient(
-            Apache4Client(baseUrl)
+          HeaderSettingHttpClient(
+            HeaderSettingHttpClient(
+              Apache4Client(baseUrl),
+              UserAgent("Lidalia Http Client 0.1.0")
+            ),
+            Host(baseUrl.hostAndPort)
+          )
         )
       )
     )
