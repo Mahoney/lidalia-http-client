@@ -72,9 +72,12 @@ class ConvenientHttpClient[+Result[_]](decorated: HttpClient[Result]) extends Ht
     headerFields: HeaderField*): Result[T] = {
 
     decorated.execute(
-      requestFor(method, pathAndQuery, headerFields.toList, accept, List(
-        accept
-      ))
+      Request(
+        method,
+        RequestUri(pathAndQuery),
+        accept,
+        headerFields.toList
+      )
     )
   }
 
@@ -89,21 +92,6 @@ class ConvenientHttpClient[+Result[_]](decorated: HttpClient[Result]) extends Ht
         RequestUri(pathAndQuery),
         headerFields.toList
       )
-    )
-  }
-
-  private def requestFor[T](
-    method: Method,
-    pathAndQuery: PathAndQuery,
-    headerFields: immutable.Seq[HeaderField],
-    accept: Accept[T],
-    baseFields: List[HeaderField]) =
-  {
-    Request(
-      method,
-      RequestUri(pathAndQuery),
-      accept,
-      baseFields ++ headerFields.toSeq
     )
   }
 

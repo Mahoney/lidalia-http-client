@@ -1,6 +1,7 @@
 package uk.org.lidalia.http.client
 
 import uk.org.lidalia.http.client.ExpectedEntityHttpClient.FutureResponse
+import uk.org.lidalia.http.client.RawHttpClient.FutureResponseStringOr
 import uk.org.lidalia.http.core.headerfields.{Host, UserAgent}
 import uk.org.lidalia.http.core.{EitherEntity, Request, Response}
 import uk.org.lidalia.net.Url
@@ -31,14 +32,14 @@ object ExpectedEntityHttpClient {
   }
 
   def apply(
-    decorated: RawHttpClient
+    decorated: HttpClient[FutureResponseStringOr]
   ) = {
     new ExpectedEntityHttpClient(decorated)
   }
 }
 
 class ExpectedEntityHttpClient private (
-  decorated: RawHttpClient
+  decorated: HttpClient[FutureResponseStringOr]
 ) extends HttpClient[FutureResponse] with FutureHttpClient[Response] {
 
   def executeClient[A](request: Request[A, _]): Future[Response[A]] = {
