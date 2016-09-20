@@ -2,6 +2,8 @@ package uk.org.lidalia.http.client
 
 import uk.org.lidalia.http.core.{HeaderField, Request}
 
+import scala.language.higherKinds
+
 object HeaderSettingHttpClient {
 
   def apply[Result[_]](

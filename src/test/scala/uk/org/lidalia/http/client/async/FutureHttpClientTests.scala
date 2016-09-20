@@ -5,6 +5,7 @@ import org.scalatest.FunSuite
 import uk.org.lidalia.http.client.ExpectedEntityHttpClient.FutureResponse
 import uk.org.lidalia.http.core.{Request, Response}
 
+import scala.language.{higherKinds, reflectiveCalls}
 import scala.concurrent.Future
 
 class FutureHttpClientTests extends FunSuite {
