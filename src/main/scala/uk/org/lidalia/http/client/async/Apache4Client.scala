@@ -89,7 +89,7 @@ class Apache4Client private (
 
   def unmarshal[T](request: Request[T, _], response: HttpResponse, responseHeader: ResponseHeader, unmarshaller: EntityUnmarshaller[T]): Entity[Either[String, T]] = {
 
-    new CloseableResourceFactory(response.getEntity.getContent).using { inputStream =>
+    new CloseableResourceFactory(() => response.getEntity.getContent).using { inputStream =>
       val content = new CapturingInputStream(inputStream)
       try {
         new EitherEntity(Right(unmarshaller.unmarshal(request, responseHeader, content)))
